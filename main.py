@@ -30,7 +30,7 @@ class SpravaPojisteni:
                 print(f"Věk: {pojisteny.vek}")
                 print("------------------------")
         else:
-            print("Žádní pojištění nenalezeni.")
+            print("Žádní pojištěnci nenalezeni.")
             time.sleep(2)
 
 while True:
@@ -38,13 +38,13 @@ while True:
     print("Evidence pojištěných")
     print("----------------------------------")
 
-    print("Vyberte si ze seznamu:")
+    print("Vyberte číslo ze seznamu:")
     print("1. Vložit pojištěného")
     print("2. Smazat pojištěného")
-    print("3. Vypsat seznam pojištěných")
+    print("3. Vypsat seznam pojištěných osob")
     print("0. Konec")
 
-    volba = input("Zadejte číslo akce: ")
+    volba = input("Zadejte číslo a potvrdte Enter: ")
 
     if volba == "1":
         jmeno = input("Zadejte jméno: ")
@@ -59,11 +59,11 @@ while True:
         prijmeni = prijmeni.upper()
 
         while True:
-            telefonni_cislo = input("Zadejte telefonní číslo (9 číslic): ")
+            telefonni_cislo = input("Zadejte telefonní číslo bez předvolby (9 číslic): ")
             if len(telefonni_cislo) == 9 and telefonni_cislo.isdigit():
                 break
             else:
-                print("Neplatné telefonní číslo. Zadejte prosím číslo s 9 číslicemi.")
+                print("Neplatné telefonní číslo. Zadejte prosím telefoní číslo bez predvolby (9 číslic).")
         while True:
             vek = input("Zadejte věk: ")
             if vek.isdigit():
@@ -85,9 +85,9 @@ while True:
         SpravaPojisteni.zobrazit_seznam_pojistenych()
 
     elif volba == "0":
-        print("Dekuji za použití programu")
+        print("Dekuji za použití programu.")
         time.sleep(2)
         break
 
     else:
-        print("Neplatná volba. Zadejte platné číst")
+        print("Neplatná volba. Zadejte platné číslo.")
